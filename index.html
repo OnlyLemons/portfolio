@@ -1,45 +1,59 @@
 <!doctype html>
 <html lang="it">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Portfolio</title>
-    <!-- Tailwind via CDN (niente build necessaria) -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      /* Smooth hover scaling for tiles */
-      .tile { transition: transform .25s ease, box-shadow .25s ease; }
-      .tile:hover { transform: scale(1.05); box-shadow: 0 20px 40px rgba(0,0,0,.25); }
-      .aspect-16-6 { position: relative; width: 100%; }
-      .aspect-16-6::before { content: ""; display: block; padding-top: calc(100% * 6 / 16); }
-      .aspect-4-3 { position: relative; width: 100%; }
-      .aspect-4-3::before { content: ""; display: block; padding-top: calc(100% * 3 / 4); }
-      .fill-abs > * { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
-    </style>
-  </head>
-  <body class="text-neutral-900 antialiased">
-    <!-- Zona superiore con sfondo azzurro (sostituito da PNG) -->
-    <section class="px-4 sm:px-6 pt-16 sm:pt-24 pb-24"
-             style="background-image:url('assets/background.png'); background-size:cover; background-position:center;">
-      <div class="max-w-6xl mx-auto">
-        <!-- Riquadro grande non scalabile -->
-        <div class="aspect-16-6 bg-black rounded-2xl shadow-md"></div>
-      </div>
-    </section>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OnlyLemons — Portfolio</title>
+  <link rel="preload" as="image" href="assets/background.png">
+  <link rel="preload" as="image" href="assets/imagetitle.png">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Intro full-screen GIF -->
+  <div id="intro" class="intro">
+    <img src="assets/gifintro.gif" alt="Intro" />
+  </div>
 
-    <!-- Zona immagini con sfondo grigio -->
-    <section class="bg-neutral-100 px-4 sm:px-6 py-24">
-      <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Primo riquadro con GIF -->
-        <div class="tile rounded-2xl overflow-hidden shadow-sm">
-          <div class="aspect-4-3 fill-abs">
-            <img src="assets/lemon.gif" alt="Portfolio GIF">
-          </div>
-        </div>
+  <!-- Top-right social text links (hidden on scroll) -->
+  <div id="social" class="social">
+    <a href="https://x.com/OnlyLemons_" target="_blank" rel="noopener">X</a>
+    <a href="https://discord.gg/GEXHNXQ6X2" target="_blank" rel="noopener">Discord</a>
+  </div>
 
-        <!-- Altri riquadri neri simmetrici -->
-        <div class="tile rounded-2xl overflow-hidden shadow-sm"><div class="aspect-4-3 bg-black"></div></div><div class="tile rounded-2xl overflow-hidden shadow-sm"><div class="aspect-4-3 bg-black"></div></div><div class="tile rounded-2xl overflow-hidden shadow-sm"><div class="aspect-4-3 bg-black"></div></div><div class="tile rounded-2xl overflow-hidden shadow-sm"><div class="aspect-4-3 bg-black"></div></div><div class="tile rounded-2xl overflow-hidden shadow-sm"><div class="aspect-4-3 bg-black"></div></div><div class="tile rounded-2xl overflow-hidden shadow-sm"><div class="aspect-4-3 bg-black"></div></div><div class="tile rounded-2xl overflow-hidden shadow-sm"><div class="aspect-4-3 bg-black"></div></div><div class="tile rounded-2xl overflow-hidden shadow-sm"><div class="aspect-4-3 bg-black"></div></div><div class="tile rounded-2xl overflow-hidden shadow-sm"><div class="aspect-4-3 bg-black"></div></div><div class="tile rounded-2xl overflow-hidden shadow-sm"><div class="aspect-4-3 bg-black"></div></div><div class="tile rounded-2xl overflow-hidden shadow-sm"><div class="aspect-4-3 bg-black"></div></div><div class="tile rounded-2xl overflow-hidden shadow-sm"><div class="aspect-4-3 bg-black"></div></div><div class="tile rounded-2xl overflow-hidden shadow-sm"><div class="aspect-4-3 bg-black"></div></div><div class="tile rounded-2xl overflow-hidden shadow-sm"><div class="aspect-4-3 bg-black"></div></div><div class="tile rounded-2xl overflow-hidden shadow-sm"><div class="aspect-4-3 bg-black"></div></div><div class="tile rounded-2xl overflow-hidden shadow-sm"><div class="aspect-4-3 bg-black"></div></div><div class="tile rounded-2xl overflow-hidden shadow-sm"><div class="aspect-4-3 bg-black"></div></div>
-      </div>
-    </section>
-  </body>
+  <!-- Floating small GIF (appears only near top) -->
+  <img id="bee" class="bee" src="assets/lemonbee.gif" alt="floating gif" />
+
+  <!-- HERO / top section -->
+  <section id="hero" class="hero">
+    <div id="large-tile" class="large-tile">
+      <img src="assets/imagetitle.png" alt="Portfolio title" />
+    </div>
+  </section>
+
+  <!-- GRID section -->
+  <section class="grid-section">
+    <div class="grid">
+      <div class="tile" data-delay="0"><img src="assets/athletic_lemon.gif" alt="tile 1" /></div>
+      <div class="tile" data-delay="200"><img src="assets/sugar_rush_dino.gif" alt="tile 2" /></div>
+      <div class="tile" data-delay="400"><img src="assets/undead.gif" alt="tile 3" /></div>
+      <div class="tile" data-delay="600"><img src="assets/wizard_cat2.gif" alt="tile 4" /></div>
+      <div class="tile" data-delay="800"><img src="assets/eeee.gif" alt="tile 5" /></div>
+      <div class="tile" data-delay="100"></div>
+      <div class="tile" data-delay="150"></div>
+      <div class="tile" data-delay="200"></div>
+      <div class="tile" data-delay="250"></div>
+      <div class="tile" data-delay="300"></div>
+      <div class="tile" data-delay="350"></div>
+      <div class="tile" data-delay="400"></div>
+      <div class="tile" data-delay="450"></div>
+      <div class="tile" data-delay="500"></div>
+      <div class="tile" data-delay="550"></div>
+      <div class="tile" data-delay="600"></div>
+      <div class="tile" data-delay="650"></div>
+      <div class="tile" data-delay="100"></div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
 </html>
