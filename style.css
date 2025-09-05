@@ -1,0 +1,24 @@
+*{box-sizing:border-box}html,body{margin:0;padding:0;height:100%;background:#0b0f19;color:#fff;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+.intro{position:fixed;inset:0;z-index:70;background:#000;display:flex;align-items:center;justify-content:center;transition:opacity 1s}
+.intro img{width:100%;height:100%;object-fit:cover}
+.intro.fade-out{opacity:0;pointer-events:none}
+.social{position:fixed;top:16px;right:16px;z-index:50;display:flex;gap:16px;font-weight:800}
+.social a{color:#fff;text-decoration:none;border-bottom:2px solid transparent}
+.social a:hover{border-color:#fff}
+.social.hidden{opacity:0;pointer-events:none;transition:opacity .2s linear}
+.bee{position:fixed;width:80px;height:80px;z-index:50;pointer-events:none;transition:top 4s ease-in-out,left 4s ease-in-out,opacity .25s linear;opacity:0}
+.hero{height:100vh;background:url('assets/background.png') center/cover no-repeat;display:flex;align-items:center;justify-content:center;padding-inline:16px}
+.large-tile{width:100%;aspect-ratio:16/6;display:flex;align-items:center;justify-content:center;filter:drop-shadow(0 6px 12px rgba(0,0,0,.35));transition:transform .05s linear,opacity 2s ease-out;opacity:0}
+.large-tile.reveal{opacity:1}
+.large-tile img{width:100%;height:100%;object-fit:contain}
+.grid-section{background:#383e4e;padding:96px 16px}
+.grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(1,1fr);gap:40px}
+@media(min-width:640px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.grid{grid-template-columns:repeat(3,1fr)}}
+.tile{position:relative;overflow:hidden;background:#000;aspect-ratio:1/1;transform:translateY(64px) scale(1);opacity:0;transition:transform 1.4s ease-out,opacity 1.4s ease-out,box-shadow .3s ease;box-shadow:0 2px 8px rgba(0,0,0,.3);cursor:zoom-in}
+.tile.reveal{transform:translateY(0) scale(1);opacity:1}
+.tile:hover{transform:translateY(0) scale(1.1);box-shadow:0 10px 30px rgba(0,0,0,.5)}
+.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000}
+.lightbox{position:fixed;inset:0;z-index:80;background:rgba(0,0,0,.88);display:none;align-items:center;justify-content:center;padding:24px}
+.lightbox.open{display:flex}
+.lightbox img{max-width:min(92vw,1600px);max-height:92vh;object-fit:contain}
